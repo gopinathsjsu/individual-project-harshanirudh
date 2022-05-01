@@ -1,8 +1,13 @@
 package com.harsha.cmpe.sjsu.inventory;
 
+import java.io.FileNotFoundException;
+import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 import com.harsha.cmpe.sjsu.inventory.db.Database;
+import com.harsha.cmpe.sjsu.inventory.files.OutputFile;
+import com.harsha.cmpe.sjsu.inventory.files.OutputFileFactory;
 import com.harsha.cmpe.sjsu.inventory.models.Items;
 
 public class ValidateOrderHandler implements AbstractOrderHandler {
@@ -24,6 +29,14 @@ public class ValidateOrderHandler implements AbstractOrderHandler {
 		if(!flag) {
 			System.out.println("Passing request to next handler");
 			next.handle(input);
+		}else {
+			OutputFileFactory fileFactory=new OutputFileFactory();
+			OutputFile errFile = fileFactory.getOutputFile("EROOR");
+			try {
+				errFile.writeToFile(Arrays.asList(messageInCorrect.toString()));
+			} catch (FileNotFoundException e) {
+				e.printStackTrace();
+			}
 		}
 
 	}

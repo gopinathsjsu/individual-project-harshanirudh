@@ -5,6 +5,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import com.harsha.cmpe.sjsu.inventory.db.Database;
+import com.harsha.cmpe.sjsu.inventory.models.InputItems;
 import com.harsha.cmpe.sjsu.inventory.models.Items;
 
 public class InputReader {
@@ -27,12 +28,15 @@ public class InputReader {
 				String category=matchedItem.getCategory();
 				String itemName=matchedItem.getItem();
 				Double price=matchedItem.getPrice();
-				Items Item=new Items(category, itemName, Integer.parseInt(items[1]), price);
+				Items Item=new InputItems(category, itemName, Integer.parseInt(items[1]), price,items[2]);
 				result.add(Item);
+			}else {
+				Items item=new InputItems(null, items[0].toUpperCase(), Integer.parseInt(items[1]), 0, null);
+				result.add(item);
 			}
 			
 		}
-//		System.out.println(result);
+		System.out.println(result);
 		return result;
 	}
 }
