@@ -20,8 +20,8 @@ public class DbHelper {
 		db=Database.getInstance();
 	}
 	public  void intializeDatabase(String location1,String location2) throws IOException {
-		List<String> items=fp.readFile(location1);
-		List<String> cards=fp.readFile(location2);
+		List<String> items=fp.readFileFromResources(location1);
+		List<String> cards=fp.readFileFromResources(location2);
 		Map<String, Items> itemsMap = db.getItemsTable();
 		for(int i=1;i<items.size();i++) {
 			String[] data=items.get(i).split(",");
@@ -30,7 +30,7 @@ public class DbHelper {
 		}
 		for(int i=1;i<cards.size();i++) {
 			String[] data=cards.get(i).split(",");
-			db.getCards().add(data[0]);
+			db.getCards().add(data[0].trim());
 		}
 		
 	}

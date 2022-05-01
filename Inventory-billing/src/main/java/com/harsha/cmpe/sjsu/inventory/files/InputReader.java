@@ -28,7 +28,7 @@ public class InputReader {
 				String category=matchedItem.getCategory();
 				String itemName=matchedItem.getItem();
 				Double price=matchedItem.getPrice();
-				Items Item=new InputItems(category, itemName, Integer.parseInt(items[1]), price,items[2]);
+				Items Item=new InputItems(category, itemName, Integer.parseInt(items[1]), price,items.length<3?null:items[2].trim());
 				result.add(Item);
 			}else {
 				Items item=new InputItems(null, items[0].toUpperCase(), Integer.parseInt(items[1]), 0, null);

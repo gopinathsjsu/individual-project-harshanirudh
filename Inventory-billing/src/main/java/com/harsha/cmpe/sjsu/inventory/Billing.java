@@ -11,7 +11,7 @@ import com.harsha.cmpe.sjsu.inventory.models.Items;
 public class Billing {
 
 	public static void main(String[] args) {
-		if(args.length<3) {
+		if(args.length<1) {
 			System.out.println("Provide input file location");
 			System.exit(-1);
 		}
@@ -22,10 +22,10 @@ public class Billing {
 		DbHelper dbhelper=new DbHelper();
 		try {
 			//Intialize the db
-			dbhelper.intializeDatabase(args[0],args[1]);
+			dbhelper.intializeDatabase("inventory.csv","cardNumbers.csv");
 //			System.out.println(Database.getInstance().getItemsTable());
 			//Read input file
-			InputReader reader=new InputReader(args[2]);
+			InputReader reader=new InputReader(args[0]);
 			List<Items>input=reader.getItems();
 			
 			//Intialize the handler chain

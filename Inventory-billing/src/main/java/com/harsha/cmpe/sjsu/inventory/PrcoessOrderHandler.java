@@ -25,20 +25,23 @@ public class PrcoessOrderHandler implements AbstractOrderHandler{
 		List<String> content=new ArrayList<>();
 		double total = 0;
 		content.add("Item,Quantity,Price\n");
+		System.out.println("Before adding cards to DB\n"+db.getCards());
 		for(Items item:input) {
 			total+=db.getItemsTable().get(item.getItem()).getPrice()*item.getQuantity();
 			int intialInventory=db.getItemsTable().get(item.getItem()).getQuantity();
 			db.getItemsTable().get(item.getItem()).setQuantity(intialInventory-item.getQuantity());;
 			//Add cards to cardset
-			System.out.println(db.getCards());
-			db.getCards().add(((InputItems)item).getCardNumber());
-			System.out.println(db.getCards());
+			
+			String cardValue=((InputItems)item).getCardNumber();
+			if(cardValue!=null)
+				db.getCards().add(cardValue);
 			StringBuilder line=new StringBuilder();
 			line.append(item.getItem()).append(",")
 			.append(item.getQuantity()).append(",").append(item.getPrice())
 			.append("\n");
 			content.add(line.toString());
 		}
+		System.out.println("After adding cards to db\n"+db.getCards());
 		content.add("Totoal Amount \n");
 		content.add(String.valueOf(total));
 		OutputFileFactory fileFactory=new OutputFileFactory();
