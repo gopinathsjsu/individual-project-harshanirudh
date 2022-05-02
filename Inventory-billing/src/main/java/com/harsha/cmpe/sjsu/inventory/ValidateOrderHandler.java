@@ -12,7 +12,7 @@ import com.harsha.cmpe.sjsu.inventory.models.Items;
 
 public class ValidateOrderHandler implements AbstractOrderHandler {
 	private AbstractOrderHandler next;
-	private StringBuilder messageInCorrect=new StringBuilder();
+	private StringBuilder messageInCorrect=new StringBuilder("Please Check the Quantities of the following\n");
 	private boolean flag;
 	@Override
 	public void handle(List<Items> input) {
@@ -20,7 +20,6 @@ public class ValidateOrderHandler implements AbstractOrderHandler {
 		Database db=Database.getInstance();
 		for(Items item:input) {
 			//when inventory quantity is less
-			messageInCorrect.append("Please Check the Quantities of the following\n");
 			if(db.getItemsTable().get(item.getItem()).getQuantity()<item.getQuantity()) {
 				flag=true;
 				messageInCorrect.append(item.getItem()+":("+item.getQuantity()+")\n");
@@ -31,7 +30,7 @@ public class ValidateOrderHandler implements AbstractOrderHandler {
 			next.handle(input);
 		}else {
 			OutputFileFactory fileFactory=new OutputFileFactory();
-			OutputFile errFile = fileFactory.getOutputFile("EROOR");
+			OutputFile errFile = fileFactory.getOutputFile("ERROR");
 			try {
 				errFile.writeToFile(Arrays.asList(messageInCorrect.toString()));
 			} catch (FileNotFoundException e) {

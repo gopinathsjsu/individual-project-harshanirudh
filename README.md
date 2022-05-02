@@ -73,13 +73,36 @@ Please refer to the attached file for Inventory, Sample Input and output files. 
 ## Test Case 1
 
 ### Input
-![TC1](/Inventory-billing//Artifacts/TC-1-Input.png)
+![TC1 Input file](/Inventory-billing//Artifacts/TC-1-Input.png)
 ### Output
-![TC1](/Inventory-billing//Artifacts/TC-1-console.png)
-![TC1](/Inventory-billing//Artifacts/TC-1-Output.png)
-## Test Case 2
+![TC1 Console log](/Inventory-billing//Artifacts/TC-1-console.png)  
+![TC1 Output file](/Inventory-billing//Artifacts/TC-1-Output.png)
+
+### Test Case 2
 
 ### Input
+![TC2 Input file](/Inventory-billing//Artifacts/TC-2-Input.png)
 ### Output
+![TC2 Console log](/Inventory-billing//Artifacts/TC-2-console.png)  
+![TC2 Output file](/Inventory-billing//Artifacts/TC-2-Output.png)
+
+### Test Case 3
+
+### Input
+![TC3 Input file](/Inventory-billing//Artifacts/TC-3-Input.png)  
+![TC3 Input file](/Inventory-billing//Artifacts/TC-3-Input-1.png) 
+
+### Output
+![TC3 Console log](/Inventory-billing//Artifacts/TC-3-console.png)  
+![TC3 Output file](/Inventory-billing//Artifacts/TC-3-Output.png)
+
+### Test Case 4
+
+### Input
+![TC4 Input file](/Inventory-billing//Artifacts/TC-4-Input.png)
+
+### Output
+![TC4 Console log](/Inventory-billing//Artifacts/TC-4-console.png)  
+![TC4 Output file](/Inventory-billing//Artifacts/TC-4-Output.png)
 
     
