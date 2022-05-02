@@ -43,7 +43,43 @@ Please refer to the attached file for Inventory, Sample Input and output files. 
     - Here, the inventory database has been implemented with singleton pattern, so that we can mimic a real database where it has single source of truth.
     - Whenever the database is required , a static call to `getInstance()` method gives the object.  
 
-    ![](/Inventory-billing/Artifacts/Singelton.drawio%20(1).png)  
-    
-2. Chain of Responsibility pattern
+    [Singelton Class Diagram](/Inventory-billing/Artifacts/Singelton.drawio%20(1).png "Singelton Class Diagram")  
+
+2. Chain of Responsibility pattern  
+    - This is behavioural pattern.
+    - It is very useful pattern when the request has to be handled and prcoessed by multiple classes/objects. 
+    - Base class defines the methods signatures and the concerate classes override the behaviors and a chain is created .
+    - In the chain the request is passed along till the appropriate class processes it and gives the result.  
+    - Here the base class is AbstractOrderHandler and we have 4 concerete handlers
+        - **CheckItemPresenceHandler**: Check if items are present in inventory or not. If present passes to next handler in the chain.
+        - **CheckMaxLimitOrderHandler**: Checks if the items in the order obey the maximum category as defined in the problem statement.If yes, passes down the chain
+        - **ValidateOrderHandler**: Checks if the items quantity in the order is availabile in the inventory. If yes, passes the request down the chain.
+        - **ProcessOrderHandler** : Finally this class processes the order and the request is fulfilled.
+
+     [Chain Of Responsibility Pattern Class Diagram](/Inventory-billing/Artifacts/ChainOfResponsibil.drawio.png "Chain Of Responsibility Pattern Class Diagram")  
+
 3. Factory Pattern
+    - This is also a creational design pattern.
+    - I have used this pattern to create output file and error file as required.
+        - Base Class: OutputFile
+        - Concrete Class 1: CSVOutput
+        - Concrete Class 2: ErrorFile
+    - Factory pattern allows sub classes to choose the type of objects to create.
+    - it also promotes loose coupling  
+     [Factory Pattern class diagram](/Inventory-billing/Artifacts/factory.drawio.png "Factory Pattern Class Diagram")  
+
+# Screenshots
+
+## Test Case 1
+
+### Input
+![TC1](/Inventory-billing//Artifacts/TC-1-Input.png)
+### Output
+![TC1](/Inventory-billing//Artifacts/TC-1-console.png)
+![TC1](/Inventory-billing//Artifacts/TC-1-Output.png)
+## Test Case 2
+
+### Input
+### Output
+
+    
