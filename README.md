@@ -26,7 +26,7 @@ Please refer to the attached file for Inventory, Sample Input and output files. 
 **Java 8 needs to be installed**
 
 - Open CMD or Terminal   
-- Download the JAR file from the repository present in artifacts folder.  
+- Download the JAR file from the repository present in **bin** folder.  
 - Run the following command in terminal  
 `java -jar <jar_name> <input_file_location>`  
 - For example: `java -jar Inventory-billing-0.0.1-SNAPSHOT.jar input.csv`  
