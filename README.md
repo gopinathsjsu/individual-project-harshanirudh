@@ -43,7 +43,7 @@ Please refer to the attached file for Inventory, Sample Input and output files. 
     - Here, the inventory database has been implemented with singleton pattern, so that we can mimic a real database where it has single source of truth.
     - Whenever the database is required , a static call to `getInstance()` method gives the object.  
 
-    [Singelton Class Diagram](/Inventory-billing/Artifacts/Singelton.drawio%20(1).png "Singelton Class Diagram")  
+    ![Singelton Class Diagram](/Inventory-billing/Artifacts/Singelton.drawio%20(1).png "Singelton Class Diagram")  
 
 2. Chain of Responsibility pattern  
     - This is behavioural pattern.
@@ -56,7 +56,7 @@ Please refer to the attached file for Inventory, Sample Input and output files. 
         - **ValidateOrderHandler**: Checks if the items quantity in the order is availabile in the inventory. If yes, passes the request down the chain.
         - **ProcessOrderHandler** : Finally this class processes the order and the request is fulfilled.
 
-     [Chain Of Responsibility Pattern Class Diagram](/Inventory-billing/Artifacts/ChainOfResponsibil.drawio.png "Chain Of Responsibility Pattern Class Diagram")  
+     ![Chain Of Responsibility Pattern Class Diagram](/Inventory-billing/Artifacts/ChainOfResponsibil.drawio.png "Chain Of Responsibility Pattern Class Diagram")  
 
 3. Factory Pattern
     - This is also a creational design pattern.
@@ -66,7 +66,7 @@ Please refer to the attached file for Inventory, Sample Input and output files. 
         - Concrete Class 2: ErrorFile
     - Factory pattern allows sub classes to choose the type of objects to create.
     - it also promotes loose coupling  
-     [Factory Pattern class diagram](/Inventory-billing/Artifacts/factory.drawio.png "Factory Pattern Class Diagram")  
+     ![Factory Pattern class diagram](/Inventory-billing/Artifacts/factory.drawio.png "Factory Pattern Class Diagram")  
 
 # Screenshots
 
