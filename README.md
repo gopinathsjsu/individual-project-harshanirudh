@@ -1,4 +1,5 @@
 # Problem Statement
+### Git Link: https://github.com/gopinathsjsu/individual-project-harshanirudh
 Requirements:
 ***
 The application should maintain an internal, static database (inventory of stock)  (this may be developed using HashMaps and/or other  built-in Java Data structures). This means once we re-run the program, the changes to the data would not persist. We will provide the data that has to be maintained. The data will contain the following tables and fields:<br /> 
@@ -104,5 +105,8 @@ Please refer to the attached file for Inventory, Sample Input and output files. 
 ### Output
 ![TC4 Console log](/Inventory-billing//Artifacts/TC-4-console.png)  
 ![TC4 Output file](/Inventory-billing//Artifacts/TC-4-Output.png)
+
+## Class Diagram  of Entire Project
+![Class Diagram](/Inventory-billing/Artifacts/ClassDiagram.png)
 
     
