@@ -16,9 +16,9 @@ import com.harsha.cmpe.sjsu.inventory.models.Items;
 public class CheckMaxLimitOrderHandler implements AbstractOrderHandler {
 
 	private AbstractOrderHandler next;
-	private final int MAX_LUXURY = 300;
-	private final int MAX_ESSENTIAL = 500;
-	private final int MAX_MISSC = 600;
+	private final int MAX_LUXURY = 3;
+	private final int MAX_ESSENTIAL = 5;
+	private final int MAX_MISSC = 6;
 	private StringBuilder messageInCorrect = new StringBuilder("Please correct the quantities\n");
 	private boolean flag;
 
